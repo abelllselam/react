@@ -1,12 +1,12 @@
 function UserProfile() {
-  let name = "Abel";
-  let message;
-  if (name === "Abel") {
-    message = <p>the person name is {name}</p>;
-  } else {
-    message = <p>The person name is not {name}</p>;
+  function clickExample() {
+    alert("You clicked me!");
   }
-  return <div>{message}</div>;
+  return (
+    <div>
+      <button onClick={clickExample}>I am a button</button>
+    </div>
+  );
 }
 
 export default UserProfile;

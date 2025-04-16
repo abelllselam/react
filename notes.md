@@ -75,3 +75,46 @@ e.g: <img className="avatar">
     <div>
         {isLoggedIn && <AdminPanel />}
     </div>
+
+**Rendering lists:**
+
+- This is how you render a list in react:
+  function UserProfile() {
+  const names = [
+  { fname: "Abel", id: 1 },
+  { fname: "Meti", id: 2 },
+  { fname: "Hirut", id: 3 },
+  ];
+
+  const listNames = names.map((name) =>
+  <li key={name.id}>
+  {name.fname}
+  </li>);
+  return <div>{listNames}</div>;
+  }
+
+export default UserProfile;
+
+- The key attribue is a unique number usually the id from the database and it should be used to identify siblings. React uses keys to know what happened if you later insert, delete, or reorder the items.
+
+**Responding to events:**
+
+- You can respond to event handlers by having a function inside your components.
+  e.g:function UserProfile() {
+  function clickExample() {
+  alert("You clicked me!");
+  }
+  return (
+  <div>
+  <button onClick={clickExample}>
+  I am a button
+  </button>
+  </div>
+  );
+  }
+
+        export default UserProfile;
+
+- notice that there is no parenthesis on onClick={clickExample}. No need to call the function. You only need to pass it down. React will call event handler when the user clicks the button.
+
+**Updating the Screen:**
